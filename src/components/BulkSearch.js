@@ -1,5 +1,6 @@
 import {
   Button,
+  CircularProgress,
   Container,
   MenuItem,
   Paper,
@@ -170,7 +171,16 @@ export default function BulkSearch({ data, setData }) {
           </Paper>
         </Stack>
       ) : (
-        <Typography>Loading...</Typography>
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+        <CircularProgress/>
+        <Typography p={2}>Loading... this may take a minute</Typography>
+        </Container>
       )}
     </div>
   );
