@@ -49,7 +49,8 @@ export default function BulkSearch({ data, setData }) {
       .post("/bulk/", {
      
           cardNames: cardArray,
-          websites: websites
+          websites: websites,
+          condition: condition,
        
       })
       .then((res) => {
