@@ -33,20 +33,23 @@ export default function BulkSearch({ data, setData }) {
   };
 
   const handleClick = () => {
+    // get list of websites to search
+    let websites = [];
+    if (gauntlet) websites.push("gauntlet");
+    if (four01) websites.push("four01");
+    if (houseOfCards) websites.push("houseOfCards");
+    if (fusion) websites.push("fusion");
+    if (kanatacg) websites.push("kanatacg");
+
     console.log("Clicked");
     const cardArray = cardList.split("\n");
     setLoading(true);
     axios
       .post("/bulk/", {
-        data: {
-          cards: cardArray,
-          condition: condition,
-          gauntlet: gauntlet,
-          four01: four01,
-          houseOfCards: houseOfCards,
-          fusion: fusion,
-          kanatacg: kanatacg,
-        },
+     
+          cardNames: cardArray,
+          websites: websites
+       
       })
       .then((res) => {
         console.log("setting response data: ", res.data);
