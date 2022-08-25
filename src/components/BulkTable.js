@@ -132,7 +132,7 @@ export default function BulkTable({ data }) {
   //   PROCESS DATA ROWS FOR TABLE
   try {
     for (const card of data) {
-      const websiteLogo = null;
+      let websiteLogo = null;
       if (card["website"] === "gauntlet") {
         websiteLogo = gauntletImage;
       } else if (card["website"] === "houseOfCards") {
