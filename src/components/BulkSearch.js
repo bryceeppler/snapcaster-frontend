@@ -64,12 +64,17 @@ export default function BulkSearch({ data, setData }) {
   return (
     <div>
       {!loading ? (
-        <Stack direction="row" justifyContent="center">
+        <Stack 
+          direction="row" 
+          justifyContent="center"
+          spacing={2}
+        >
           <Paper
+            elevation={3}
             sx={{
               padding: 2,
               width: "30%",
-              border: "1px solid #e0e0e0",
+              // border: "1px solid #e0e0e0",
             }}
           >
             <Stack
@@ -138,10 +143,11 @@ export default function BulkSearch({ data, setData }) {
             </Stack>
           </Paper>
           <Paper
+            elevation={3}
             sx={{
               padding: 2,
               width: "70%",
-              border: "1px solid #ccc",
+              // border: "1px solid #ccc",
             }}
           >
             <Stack direction="column" spacing={2}>
