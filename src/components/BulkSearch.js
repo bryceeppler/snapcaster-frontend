@@ -43,7 +43,26 @@ export default function BulkSearch({ data, setData }) {
     if (kanatacg) websites.push("kanatacg");
 
     console.log("Clicked");
-    const cardArray = cardList.split("\n");
+    let cardArray = cardList.split("\n");
+    cardArray.forEach((card, index) => {{
+      // remove any weird characters for foil marking
+      cardArray[index] = card.replace("*F*", "");
+
+      // remove any slashes in the string
+      cardArray[index] = card.replace("/", "");
+
+      // remove any numbers at the start of the card name
+      cardArray[index] = cardArray[index].replace(/^\d+\s/, "");
+
+      // remove basic lands
+      if (cardArray[index].match(/plains/gi) || cardArray[index].match(/island/gi) || cardArray[index].match(/swamp/gi) || cardArray[index].match(/mountain/gi) || cardArray[index].match(/forest/gi)) {
+        cardArray[index] = "";
+      };
+    }})
+    cardArray = cardArray.filter(card => card);
+    console.log(cardArray);
+
+
     setLoading(true);
     axios
       .post("/bulk/", {

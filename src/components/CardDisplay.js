@@ -18,8 +18,8 @@ import { Link } from "react-router-dom";
 import { Link as MuiLink } from "@mui/material";
 import Container from "@mui/material/Container";
 
-axios.defaults.baseURL = "http://alb-sc-api-1201377282.us-east-1.elb.amazonaws.com/api/";
-// axios.defaults.baseURL = "http://localhost:8000/api/";
+// axios.defaults.baseURL = "http://alb-sc-api-1201377282.us-east-1.elb.amazonaws.com/api/";
+axios.defaults.baseURL = "http://localhost:8000/api/";
 
 // modal styling temporarily
 const style = {
@@ -133,11 +133,17 @@ export default function CardDisplay() {
             What is snapcaster?
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            snapcaster was created to help Canadian MTG enthusiasts find the
-            cheapest card prices from Canadian vendors. All prices are in CAD.
-            Currently, we support Fusion Gaming, HouseofCards, Gauntlet Games,
-            401games, and WizardsTower. If you would like to see another site
-            indexed on snapcaster, or encounter any bugs, email me at
+            snapcaster helps MTG enthusiasts find the
+            cheapest card prices from Canadian vendors. To search for a single
+            card across all indexed stores, enter the card name in the search bar.
+            To search for multiple cards, click the "bulk search" button.
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            
+            All prices are in CAD.
+            Currently, we support 401 Games, Fusion Gamimg, Gauntlet Games, 
+            House of Cards and Wizard's Tower. If you would like to see another site
+            indexed on snapcaster or encounter any bugs, email me at
             epplerdev@gmail.com.
           </Typography>
         </Box>
