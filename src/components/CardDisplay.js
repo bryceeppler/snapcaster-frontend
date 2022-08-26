@@ -60,7 +60,6 @@ export default function CardDisplay() {
             justifyContent: "center",
           }}
         >
-          <Stack direction="row" spacing={4} justifyContent="center">
             <Typography
               variant="h4"
               component="h1"
@@ -69,7 +68,7 @@ export default function CardDisplay() {
             >
               snapcaster
             </Typography>
-          </Stack>
+
 
           <CardForm
             setLoading={setLoading}
