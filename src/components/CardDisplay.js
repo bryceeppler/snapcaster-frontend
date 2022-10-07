@@ -19,7 +19,7 @@ import { Link as MuiLink } from "@mui/material";
 import Container from "@mui/material/Container";
 
 // axios.defaults.baseURL = "http://alb-sc-api-1201377282.us-east-1.elb.amazonaws.com/api/";
-axios.defaults.baseURL = "http://localhost:8000/api/";
+axios.defaults.baseURL = "https://snapcaster-api.bryceeppler.com";
 
 // modal styling temporarily
 const style = {
